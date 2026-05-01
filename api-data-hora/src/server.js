@@ -4,10 +4,10 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  res.send('API funcionando 🚀');
+  res.send('API ONLINE 🚀');
 });
 
 app.get('/data-hora', (req, res) => {
@@ -20,8 +20,5 @@ app.get('/data-hora', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
-app.get('/', (req, res) => {
-  res.send('API ONLINE 🚀');
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
